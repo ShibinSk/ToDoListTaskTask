@@ -1,0 +1,269 @@
+
+
+{{!-- <header>
+    <div class="header">
+        <h1 class="logo">To Do App</h1>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <form action="addtask" method="post" class="row g-5 p-5">
+            <div class="col-auto">
+            </div>
+            <div class="col-auto">
+                <label for="" class="visually-hidden">Tasks</label>
+                <input type="text" name="task" class="form-control" id="inputPassword2" placeholder="Tasks">
+                <input type="number" name="praority" class="form-control" id="inputPassword2" placeholder="praority">
+
+
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-1">Add</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+
+
+<div class="container">
+    <div class="TaskList">
+        <div class="activeTask">
+            <h3>Pending ( {{count}} )</h3>
+
+
+            {{#each result}}
+            <span>
+
+                <div>
+
+
+                    <h4> {{ @index }}. {{this.task}}( {{this.priority}} )[ ✘ ]</h4>
+
+                    <div class="mainbtn">
+                        <div class="btn">
+                            <a href="/delete/{{this._id}}"> <button class="btn btn-danger">delete</button> </a>
+
+                        </div>
+                        <div class="btn">
+                            <a href="/complated/{{this._id}}"> <button class="btn btn-primary">complated</button></a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                {{/each}}
+
+
+
+
+        </div>
+
+        <div class="deletedTask">
+            <h3>deleted ( {{deleteCount}} ) </h3>
+
+            
+            {{#each deleted}}
+            <span>
+
+                <div>
+
+
+                    <h4> {{ @index }}. {{this.task}}( {{this.priority}} )[ ✘ ]</h4>
+
+                    <div class="mainbtn">
+                        <div class="btn">
+                            <a href="/perDelete/{{this._id}}"> <button class="btn btn-danger">delete</button> </a>
+
+                        </div>
+                       
+                    </div>
+
+
+                </div>
+
+                {{/each}}
+
+
+        </div>
+
+        <div class="canceledTask">
+            <h3>complated ( {{complated}})</h3>
+             {{#each complat}}
+            <span>
+
+                <div>
+
+
+                    <h4> {{ @index }}. {{this.task}}( {{this.priority}} )[ ✓ ]</h4>
+
+                    <div class="mainbtn">
+                        <div class="btn">
+                            <a href="/delete/{{this._id}}"> <button class="btn btn-danger">delete</button> </a>
+
+                        </div>
+                        <div class="btn">
+                            <a href="/complated/{{this._id}}"> <button class="btn btn-primary">complated</button></a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                {{/each}}
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+</div> --}}
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+     
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="/stylesheets/style.css">
+   
+  </head>
+  <body>
+    <header>
+    <div class="header">
+        <h1 class="logo">To Do App</h1>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <form action="addtask" method="post" class="row g-5 p-5">
+            <div class="col-auto">
+            </div>
+            <div class="col-auto">
+                <label for="" class="visually-hidden">Tasks</label>
+                <input type="text" name="task" class="form-control" id="inputPassword2" placeholder="Tasks">
+                <input type="number" name="praority" class="form-control" id="inputPassword2" placeholder="praority">
+
+
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-1">Add</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+
+
+<div class="container">
+    <div class="TaskList">
+        <div class="activeTask">
+            <h3>Pending ( {{count}} )</h3>
+
+
+            {{#each result}}
+            <span>
+
+                <div>
+
+
+                    <h4> {{ @index}}. {{this.task}}( {{this.priority}} )[ ✘ ]</h4>
+
+                    <div class="mainbtn">
+                        <div class="btn">
+                            <a href="/delete/{{this._id}}"> <button class="btn btn-danger">delete</button> </a>
+
+                        </div>
+                        <div class="btn">
+                            <a href="/complated/{{this._id}}"> <button class="btn btn-primary">complated</button></a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                {{/each}}
+
+
+
+
+        </div>
+
+        <div class="deletedTask">
+            <h3>deleted ( {{deleteCount}} ) </h3>
+
+            
+            {{#each deleted}}
+            <span>
+
+                <div>
+
+
+                    <h4> {{ @index }}. {{this.task}}( {{this.priority}} )[ ✘ ]</h4>
+
+                    <div class="mainbtn">
+                        <div class="btn">
+                            <a href="/perDelete/{{this._id}}"> <button class="btn btn-danger">delete</button> </a>
+
+                        </div>
+                       
+                    </div>
+
+
+                </div>
+
+                {{/each}}
+
+
+        </div>
+
+        <div class="canceledTask">
+            <h3>complated ( {{complated}})</h3>
+             {{#each complat}}
+            <span>
+
+                <div>
+
+
+                    <h4> {{ @index }}. {{this.task}}( {{this.priority}} )[ ✓ ]</h4>
+
+                    <div class="mainbtn">
+                        <div class="btn">
+                            <a href="/delete/{{this._id}}"> <button class="btn btn-danger">delete</button> </a>
+
+                        </div>
+                        
+                    </div>
+
+
+                </div>
+
+                {{/each}}
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
+  </body>
+</html>

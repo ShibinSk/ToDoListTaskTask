@@ -1,0 +1,44 @@
+body {
+  background-color: aquamarine;
+}
+
+.container{
+  padding-left: 50vh;
+}
+
+.header{
+  background-color: black;
+  width: 100%;
+  height: 10vh;
+}
+.logo{
+  color: aliceblue;
+  padding: 10px;
+}
+.activeTask{
+  width: 30vh;
+  height: 5vh;
+  background-color: blueviolet;
+  padding-right: 20px;
+  margin-right: 10vh;
+}
+.deletedTask{
+  width: 30vh;
+  height: 5vh;
+  background-color: rgb(89, 231, 22);
+  margin-right: 10vh;
+}
+.canceledTask{
+  width: 30vh;
+  height: 5vh;
+  background-color: rgb(234, 238, 17);
+}
+.TaskList{
+  display: flex;
+  padding-left: 10px;
+  margin-right: 3vh;
+}
+.mainbtn{
+  display: flex;
+  flex-direction: row;
+}
