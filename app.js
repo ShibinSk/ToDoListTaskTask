@@ -15,8 +15,7 @@ var app = express();
 
 
 
-app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views');
+
 
 var http = require("http");
 // view engine setup
@@ -30,7 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.set('views', path.join(__dirname, 'views'));
+
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
