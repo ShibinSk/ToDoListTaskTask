@@ -3,18 +3,14 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const Handlebars = require("handlebars");
+
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const connection = require("./db/connnection");
 
-const exphbs = require("express-handlebars");
-const helpers = require("handlebars-helpers");
+
 var app = express();
-
-
-
 
 
 var http = require("http");
